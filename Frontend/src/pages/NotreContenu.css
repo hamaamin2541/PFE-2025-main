@@ -1,0 +1,273 @@
+/* NotreContenu.css */
+
+.notre-contenu-container {
+  padding-bottom: 60px;
+}
+
+h2 {
+  font-weight: bold;
+  color: #222;
+}
+
+.main-buttons button,
+.subcategory-buttons button {
+  min-width: 180px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.main-buttons button:hover,
+.subcategory-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.course-card {
+  border: none;
+  border-radius: 16px;
+  background: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.course-card .card-body {
+  padding: 1.8rem;
+}
+
+.course-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.course-card .card-text {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.course-card .btn-success {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.course-card .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.hover-effect {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Effects */
+.animate-fade {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.explore-hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/path/to/pattern.svg') repeat;
+  opacity: 0.05;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #546e7a;
+  line-height: 1.6;
+}
+
+/* Search Form */
+.search-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input-container {
+  position: relative;
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input-container:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  margin-right: 10px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.search-input {
+  padding-left: 45px !important;  /* Increased padding to accommodate icon + spacing */
+  height: 56px;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: none !important;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.search-button {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.8rem 2rem;
+  height: 48px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Categories and Subcategories */
+.main-buttons .btn,
+.subcategory-buttons .btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0.5rem;
+  border: 2px solid transparent;
+}
+
+.main-buttons .btn-outline-dark {
+  background: #f8fafc;
+  color: #2c3e50;
+  border-color: #e2e8f0;
+}
+
+.main-buttons .btn-outline-dark:hover {
+  background: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+  
+  .main-buttons .btn,
+  .subcategory-buttons .btn {
+    margin: 0.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Error Alert */
+.alert-danger {
+  border-radius: 8px;
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}

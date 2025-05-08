@@ -1,0 +1,71 @@
+/* NosProfesseurs.css */
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  
+  .container h1 {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  p.lead {
+    color: #34495e;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+.teacher-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-image {
+  height: 250px;
+  object-fit: cover;
+}
+
+.teacher-advice-section {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+  border-radius: 10px;
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #495057;
+}

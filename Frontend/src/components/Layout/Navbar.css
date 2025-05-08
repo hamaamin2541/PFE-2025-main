@@ -1,0 +1,89 @@
+/* ====== NAVBAR ISOLÉE SANS BORDURE ET SANS OMBRE ====== */
+.navbar-custom {
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-custom-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar-custom-logo {
+  height: auto;
+  width: 140px;
+}
+
+/* Bouton sans bordure ni ombre */
+.navbar-custom-btn {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center; /* Centrer icône et texte */
+  gap: 8px; /* Espace entre icône et texte */
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.navbar-custom-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Navigation Links */
+.navbar-custom-nav-link {
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center; /* Centrer icône et texte */
+  gap: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  border: none;
+  text-decoration: none;
+}
+
+.navbar-custom-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dropdown */
+.navbar-custom-dropdown-toggle {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-custom-dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Icônes Lucide */
+.navbar-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Modal */
+.navbar-custom-modal-content {
+  border-radius: 12px;
+}
+
+/* Toggle Button */
+.navbar-custom-toggler-icon {
+  background-color: white;
+}
+
+/* ====== FIN NAVBAR ====== */
