@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import fs from 'fs';
 import connectDB from './config/db.js';
 import { errorHandler } from './utils/errorHandler.js'; // Import custom error handler
+import mongoose from 'mongoose';
 
 // Import routes
 import authRoutes from './routes/authRoutes.js';
@@ -64,6 +65,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/teacher-advice', teacherAdviceRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/courses', courseRoutes);
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 // Global error handler
 app.use((err, req, res, next) => {

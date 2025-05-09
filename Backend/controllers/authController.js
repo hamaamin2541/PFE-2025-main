@@ -1,60 +1,69 @@
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
 export const register = async (req, res) => {
   try {
-    const { email, fullName, password, role, studentCard, teacherId, paymentInfo } = req.body;
-
-    // Check if user exists
-    const userExists = await User.findOne({ email });
-    if (userExists) {
-      return res.status(400).json({
-        success: false,
-        message: 'User with this email already exists',
-      });
-    }
-
-    // Create user object with required fields
-    const userData = {
+    const {
       fullName,
       email,
       password,
       role,
+      studentCard,
+      teacherId,
+      paymentInfo
+    } = req.body;
+
+    // Check if user exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email already registered'
+      });
+    }
+
+    // Create user data object
+    const userData = {
+      fullName,
+      email,
+      password,
+      role
     };
 
     // Add role-specific data
-    if (role === 'student' && studentCard) {
+    if (role === 'student') {
       userData.studentCard = studentCard;
     } else if (role === 'teacher') {
-      if (teacherId) {
-        userData.teacherId = teacherId;
-      }
-      if (paymentInfo) {
-        userData.paymentInfo = paymentInfo;
-      }
+      userData.teacherId = teacherId;
+      userData.paymentInfo = paymentInfo;
     }
 
-    // Create a new user
     const user = await User.create(userData);
 
-    const token = user.getSignedJwtToken();
+    // Generate JWT token
+    const token = jwt.sign(
+      { userId: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: '24h' }
+    );
 
-    // Return the user data
     res.status(201).json({
       success: true,
       token,
       user: {
-        id: user._id,
+        _id: user._id,
         fullName: user.fullName,
         email: user.email,
-        role: user.role,
-        studentCard: user.studentCard,
-        teacherId: user.teacherId,
-      },
+        role: user.role
+      }
     });
+
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({
       success: false,
-      message: error.message,
+      message: 'Error during registration'
     });
   }
 };
